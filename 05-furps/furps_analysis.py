@@ -50,7 +50,7 @@ def build_matrix():
     lines = ["| ID | Требование | Приоритет | " + " | ".join(COMPONENTS) + " |",
              "|---|---|:---:|" + ":---:|" * len(COMPONENTS)]
     for req in REQUIREMENTS:
-        cells = [analyze_requirement(req, c) or "—" for c in COMPONENTS]
+        cells = [analyze_requirement(req, c) or "·" for c in COMPONENTS]
         lines.append(f"| {req[0]} | {req[1]} | {req[2]} | " + " | ".join(cells) + " |")
     return "\n".join(lines)
 
